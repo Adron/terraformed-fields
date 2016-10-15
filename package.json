@@ -1,0 +1,28 @@
+{
+  "name": "multi-provider",
+  "version": "1.0.0",
+  "description": "A Multi-provider example for AWS and GCP with Node.js.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adron/multi-cloud.git"
+  },
+  "keywords": [
+    "multi-cloud",
+    "multiple",
+    "cloud",
+    "multi-provider",
+    "multiple",
+    "provider",
+    "multi-region"
+  ],
+  "author": "Adron Hall",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Adron/multi-cloud/issues"
+  },
+  "homepage": "https://github.com/Adron/multi-cloud#readme"
+}

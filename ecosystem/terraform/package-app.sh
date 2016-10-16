@@ -23,17 +23,17 @@ timestamp
 
 echo "Determining if new application deployment needed."
 
-if [ ! -f ../terraform/nodejs_application.tar.gz ]; then
-    echo "No application package. Now packaging app for new Terraform deployment."
-    cd ../nodejs
-
-    clean_and_install_nodejs
-
-    timestamp
-
-    package_application
-
-    timestamp
-    else
-    echo "Application package found. Will not repackage app. Delete nodejs_application.tar.gz to repackage application."
-fi
+#if [ ! -f ../terraform/nodejs_application.tar.gz ]; then
+#    echo "No application package. Now packaging app for new Terraform deployment."
+#    cd ../nodejs
+#
+#    clean_and_install_nodejs
+#
+#    timestamp
+#
+#    package_application
+#
+#    timestamp
+#    else
+#    echo "Application package found. Will not repackage app. Delete nodejs_application.tar.gz to repackage application."
+#fi

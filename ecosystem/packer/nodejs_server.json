@@ -28,16 +28,6 @@
     },
     {
       "type": "file",
-      "source": "install-nvm.sh",
-      "destination": "install-nodejs.sh"
-    },
-    {
-      "type": "shell",
-      "script": "install-nvm.sh",
-      "pause_before": "5s"
-    },
-    {
-      "type": "file",
       "source": "install-nodejs.sh",
       "destination": "install-nodejs.sh"
     },

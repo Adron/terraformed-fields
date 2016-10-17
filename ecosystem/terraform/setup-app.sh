@@ -10,6 +10,6 @@ timestamp
 
 echo "Running setup for node @ $1."
 
-tar -xvf nodejs_application.tar.gz
+# tar -xvf nodejs_application.tar.gz
 
-forever start app.js
+# forever start app.js

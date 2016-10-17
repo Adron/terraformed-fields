@@ -1,5 +1,5 @@
 # Elasticsearch One
-resource "google_compute_instance" "sample-nodejs-2" {
+resource "google_compute_instance" "sample-brood-2" {
   name = "sample-nodejs-2"
   machine_type = "f1-micro"
   tags = [
@@ -52,7 +52,7 @@ resource "google_compute_instance" "sample-nodejs-2" {
   provisioner "remote-exec" {
     inline = [
       "chmod 700 setup-app.sh",
-      "./setup-app.sh ${google_compute_instance.sample-nodejs-1.network_interface.0.access_config.0.assigned_nat_ip}"]
+      "./setup-app.sh ${google_compute_instance.sample-brood-1.network_interface.0.access_config.0.assigned_nat_ip}"]
 
     connection {
       user = "adron"

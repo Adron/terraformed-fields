@@ -4,7 +4,7 @@
 # ping me @adron on Twitter and happy to discuss.
 
 provider "google" {
-  credentials = "${file("../../secrets/account.json")}"
+  credentials = "${file("../../../secrets/account.json")}"
   project = "that-big-universe"
   region = "us-west1"
 }

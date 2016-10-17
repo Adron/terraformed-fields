@@ -28,8 +28,8 @@ resource "google_compute_instance" "sample-brood-1" {
   }
 
   provisioner "file" {
-    source = "nodejs_application.tar.gz"
-    destination = "nodejs_application.tar.gz"
+    source = "brood_application.tar.gz"
+    destination = "brood_application.tar.gz"
     connection {
       user = "adron"
       private_key = "${file("/Users/adron/.ssh/google_compute_engine")}"

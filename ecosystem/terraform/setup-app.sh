@@ -11,4 +11,6 @@ echo "Running setup for node @ $1."
 
 tar -xvf brood_application.tar.gz
 
+npm install
+
 forever start app.js

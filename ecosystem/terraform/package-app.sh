@@ -4,14 +4,6 @@ timestamp() {
     date +"%T"
 }
 
-clean_and_install_nodejs(){
-    timestamp
-    echo "Cleaning Node.js Dependencies."
-    sudo rm -rf node_modules
-    npm install
-    echo "Cleaned up and reinstalled node dependencies."
-}
-
 package_application() {
     echo "Zipping up application with dependencies."
     cd ../../
@@ -28,9 +20,9 @@ echo "Determining if new application deployment needed."
 
 if [ ! -f ../terraform/brood_application.tar.gz ]; then
     echo "No application package. Now packaging brood for new Terraform deployment."
-
+    package_application
     echo "Finished."
     timestamp
     else
-    echo "Application package found. Will not repackage app. Delete brood_application.tar.gz to repackage application.
+    echo "Application package found. Will not repackage app. Delete brood_application.tar.gz to repackage application."
 fi

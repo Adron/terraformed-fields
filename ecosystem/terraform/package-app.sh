@@ -14,8 +14,11 @@ clean_and_install_nodejs(){
 
 package_application() {
     echo "Zipping up application with dependencies."
-    tar -czvf nodejs_application.tar.gz .
-    mv nodejs_application.tar.gz ../terraform/nodejs_application.tar.gz
+    cd ../../
+    tar -zcvf  brood_application.tar.gz \
+     bin public routes views app.js package.json
+    mv brood_application.tar.gz ecosystem/terraform/brood_application.tar.gz
+    cd ecosystem/terraform
     echo "Application packaged."
 }
 
@@ -23,17 +26,11 @@ timestamp
 
 echo "Determining if new application deployment needed."
 
-#if [ ! -f ../terraform/nodejs_application.tar.gz ]; then
-#    echo "No application package. Now packaging app for new Terraform deployment."
-#    cd ../nodejs
-#
-#    clean_and_install_nodejs
-#
-#    timestamp
-#
-#    package_application
-#
-#    timestamp
-#    else
-#    echo "Application package found. Will not repackage app. Delete nodejs_application.tar.gz to repackage application."
-#fi
+if [ ! -f ../terraform/brood_application.tar.gz ]; then
+    echo "No application package. Now packaging brood for new Terraform deployment."
+
+    echo "Finished."
+    timestamp
+    else
+    echo "Application package found. Will not repackage app. Delete brood_application.tar.gz to repackage application.
+fi

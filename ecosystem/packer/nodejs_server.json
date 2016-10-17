@@ -1,8 +1,8 @@
 {
   "variables": {
     "account_json": "../../../secrets/account.json",
-    "instance_name": "brood-{{timestamp}}",
-    "image_name": "brood-{{timestamp}}"
+    "instance_name": "broodbox",
+    "image_name": "broodbox"
   },
   "builders": [
     {

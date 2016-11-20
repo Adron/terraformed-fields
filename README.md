@@ -1,5 +1,7 @@
 # Multi-Cloud Deployment Demo
 
+[ ![Codeship Status for Adron/multi-cloud](https://app.codeship.com/projects/d4418b20-755c-0134-101b-1eaf12e437c5/status?branch=master)](https://app.codeship.com/projects/179369)
+
 A multi-cloud deployed node.js application.
 
 # Workshop Notes

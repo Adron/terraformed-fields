@@ -16,6 +16,16 @@
       "image_description": "Node.js Server.",
       "communicator": "ssh",
       "ssh_username": "broodadmin"
+    },
+    {
+      "type": "amazon-ebs",
+      "access_key": "YOUR KEY HERE",
+      "secret_key": "YOUR SECRET KEY HERE",
+      "region": "us-east-1",
+      "source_ami": "ami-fce3c696",
+      "instance_type": "t2.micro",
+      "ssh_username": "broodadmin",
+      "ami_name": "broodbox"
     }
   ],
   "provisioners": [

@@ -19,8 +19,8 @@
     },
     {
       "type": "amazon-ebs",
-      "access_key": "YOUR KEY HERE",
-      "secret_key": "YOUR SECRET KEY HERE",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
       "region": "us-east-1",
       "source_ami": "ami-fce3c696",
       "instance_type": "t2.micro",

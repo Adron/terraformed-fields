@@ -22,7 +22,7 @@
       "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
       "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
       "region": "us-west-2",
-      "source_ami": "ami-fce3c696",
+      "source_ami": "ami-fde96b9d",
       "instance_type": "t2.micro",
       "ssh_username": "broodadmin",
       "ami_name": "broodbox"

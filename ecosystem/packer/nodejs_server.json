@@ -20,12 +20,12 @@
     {
       "type": "amazon-ebs",
       "region": "us-west-2",
-      "source_ami": "ami-9eaa1cf6",
+      "source_ami": "ami-56997436",
       "instance_type": "t2.micro",
       "ssh_username": "broodadmin",
       "ami_name": "broodbox",
-      "vpc_id": "vpc-7cf87718",
-      "subnet_id": "subnet-8d154fe9"
+      "vpc_id": "vpc-6fc57c0a",
+      "subnet_id": "subnet-e565f380"
     }
   ],
   "provisioners": [

@@ -19,13 +19,13 @@
     },
     {
       "type": "amazon-ebs",
-      "access_key": "{{user `AWS_ACCESS_KEY_ID`}}",
-      "secret_key": "{{user `AWS_SECRET_ACCESS_KEY`}}",
       "region": "us-west-2",
-      "source_ami": "ami-fde96b9d",
+      "source_ami": "ami-9eaa1cf6",
       "instance_type": "t2.micro",
       "ssh_username": "broodadmin",
-      "ami_name": "broodbox"
+      "ami_name": "broodbox",
+      "vpc_id": "vpc-7cf87718",
+      "subnet_id": "subnet-8d154fe9"
     }
   ],
   "provisioners": [

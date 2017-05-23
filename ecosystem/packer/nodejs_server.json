@@ -2,7 +2,7 @@
   "variables": {
     "account_json": "../../../secrets/account.json",
     "instance_name": "broodbox",
-    "image_name": "broodboxImage",
+    "image_name": "broodboximage",
     "image_description": "Node.js Server."
   },
   "builders": [

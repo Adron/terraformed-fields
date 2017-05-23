@@ -4,9 +4,7 @@
 
 A multi-cloud deployed node.js application.
 
-# Workshop Notes
-
-Here are the notes from the Wednesday, October 19th, 2016 Workshop in London at O'Reilly Software Architecture Conference.
+To work with or develop the application into something that is more than merely just a Hello World style app, here are some starting points.
 
 ```shell-script
 npm install express -g

@@ -1,5 +1,5 @@
 # Elasticsearch One
-resource "google_compute_instance" "sample-brood-2" {
+resource "google_compute_instance" "gcp-brood-server-2" {
   name = "sample-nodejs-2"
   machine_type = "f1-micro"
   tags = [
@@ -32,7 +32,7 @@ resource "google_compute_instance" "sample-brood-2" {
     destination = "brood_application.tar.gz"
     connection {
       user = "adron"
-      private_key = "${file("/Users/adron/.ssh/google_compute_engine")}"
+      private_key = "${file("~/.ssh/google_compute_engine")}"
       agent = "false"
       timeout = "1m"
     }
@@ -43,7 +43,7 @@ resource "google_compute_instance" "sample-brood-2" {
     destination = "setup-app.sh"
     connection {
       user = "adron"
-      private_key = "${file("/Users/adron/.ssh/google_compute_engine")}"
+      private_key = "${file("~/.ssh/google_compute_engine")}"
       agent = "false"
       timeout = "1m"
     }
@@ -52,11 +52,11 @@ resource "google_compute_instance" "sample-brood-2" {
   provisioner "remote-exec" {
     inline = [
       "chmod 700 setup-app.sh",
-      "./setup-app.sh ${google_compute_instance.sample-brood-1.network_interface.0.access_config.0.assigned_nat_ip}"]
+      "./setup-app.sh ${google_compute_instance.gcp-brood-server-2.network_interface.0.access_config.0.assigned_nat_ip}"]
 
     connection {
       user = "adron"
-      private_key = "${file("/Users/adron/.ssh/google_compute_engine")}"
+      private_key = "${file("~/.ssh/google_compute_engine")}"
       agent = "false"
       timeout = "1m"
     }

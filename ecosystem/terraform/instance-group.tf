@@ -3,8 +3,8 @@ resource "google_compute_instance_group" "nodejs-instance-group" {
   description = "Sample Nodejs Server & Application following Autopilot Patter + 12-factor."
 
   instances = [
-    "${google_compute_instance.sample-brood-1.self_link}",
-    "${google_compute_instance.sample-brood-2.self_link}"
+    "${google_compute_instance.gcp-brood-server-1.self_link}",
+    "${google_compute_instance.gcp-brood-server-2.self_link}"
   ]
 
   named_port {

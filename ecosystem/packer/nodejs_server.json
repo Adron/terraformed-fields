@@ -30,6 +30,7 @@
       "vpc_id": "vpc-eb02168c",
       "subnet_id": "subnet-45705022",
       "force_deregister": "true",
+      "security_group_id": "sg-1df2692e",
       "tags": {
         "OS_Version": "Debian",
         "Release": "Jessie"

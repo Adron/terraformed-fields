@@ -27,10 +27,10 @@
       "ssh_username": "broodadmin",
       "ami_name": "{{user `instance_name`}}",
       "ami_description": "{{user `image_description`}}",
-      "vpc_id": "vpc-eb02168c",
-      "subnet_id": "subnet-45705022",
+      "vpc_id": "vpc-4b95822c",
+      "subnet_id": "subnet-ae1d3ec9",
       "force_deregister": "true",
-      "security_group_id": "sg-1df2692e",
+      "security_group_id": "sg-2572265e",
       "tags": {
         "OS_Version": "Debian",
         "Release": "Jessie"

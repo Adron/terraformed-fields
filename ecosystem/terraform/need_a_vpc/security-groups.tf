@@ -26,6 +26,7 @@
 resource "aws_security_group" "ssh" {
   name        = "ssh"
   description = "Allow port 22 ssh inbound traffic"
+  vpc_id = "${aws_vpc.vpc_prod.id}"
 
   ingress {
     from_port   = 22

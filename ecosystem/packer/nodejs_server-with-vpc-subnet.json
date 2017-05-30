@@ -21,12 +21,16 @@
     {
       "type": "amazon-ebs",
       "region": "us-west-2",
-      "source_ami": "ami-fde96b9d",
+      "source_ami": "ami-56997436",
       "instance_type": "t2.micro",
       "communicator": "ssh",
       "ssh_username": "broodadmin",
       "ami_name": "{{user `instance_name`}}",
       "ami_description": "{{user `image_description`}}",
+      "vpc_id": "vpc-4b95822c",
+      "subnet_id": "subnet-ae1d3ec9",
+      "force_deregister": "true",
+      "security_group_id": "sg-2572265e",
       "tags": {
         "OS_Version": "Debian",
         "Release": "Jessie"

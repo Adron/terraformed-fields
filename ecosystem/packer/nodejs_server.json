@@ -7,12 +7,24 @@
   },
   "builders": [
     {
+      "type": "googlecompute",
+      "account_file": "{{user `account_json`}}",
+      "project_id": "that-big-universe",
+      "source_image": "debian-8-jessie-v20160923",
+      "zone": "us-west1-a",
+      "instance_name": "{{user `instance_name`}}",
+      "image_name": "{{user `image_name`}}",
+      "image_description": "{{user `image_description`}}",
+      "communicator": "ssh",
+      "ssh_username": "broodadmin"
+    },
+    {
       "type": "amazon-ebs",
       "region": "us-west-2",
       "source_ami": "ami-fde96b9d",
       "instance_type": "t2.micro",
       "communicator": "ssh",
-      "ssh_username": "broodadmin",
+      "ssh_username": "admin",
       "ami_name": "{{user `instance_name`}}",
       "ami_description": "{{user `image_description`}}",
       "tags": {
@@ -32,18 +44,28 @@
     },
     {
       "type": "file",
-      "source": "install-nodejs.sh",
-      "destination": "install-nodejs.sh"
+      "source": "install-dependencies.sh",
+      "destination": "install-dependencies.sh"
     },
     {
-      "type": "shell",
-      "script": "install-nodejs.sh",
-      "pause_before": "5s"
+      "type": "file",
+      "source": "install-nodejs.sh",
+      "destination": "install-nodejs.sh"
     },
     {
       "type": "file",
       "source": "install-ufw.sh",
       "destination": "install-ufw.sh"
+    },
+    {
+      "type": "shell",
+      "script": "install-dependencies.sh",
+      "pause_before": "5s"
+    },
+    {
+      "type": "shell",
+      "script": "install-nodejs.sh",
+      "pause_before": "5s"
     },
     {
       "type": "shell",

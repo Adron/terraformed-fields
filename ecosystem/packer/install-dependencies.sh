@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-sudo apt-get install curl
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+sudo apt-get update
+sudo apt-get install -y curl
+sudo apt-get install -y build-essential

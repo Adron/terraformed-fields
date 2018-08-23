@@ -7,7 +7,7 @@ rm -rf .terraform
 
 cd state
 
-echo "yes" | terraform destroy
+gsutil rm -r gs://all-the-things-storage
 rm -rf terraform.tfstate
 rm -rf terraform.tfstate.backup
 rm -rf .terraform

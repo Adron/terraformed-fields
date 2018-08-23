@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BUCKET_NAME="all-the-things"
+BUCKET_NAME="all-the-things-storage"
 
 # Configure the state management of Terraform to use Google Cloud Storage.
 

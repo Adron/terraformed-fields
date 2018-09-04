@@ -6,5 +6,3 @@ terraform {
     credentials = "../infosec/account.json"
   }
 }
-
-

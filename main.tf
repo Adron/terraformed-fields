@@ -1,5 +1,4 @@
 // Networks
-
 resource "google_compute_network" "dev-network" {
   name = "development-network-primary"
   auto_create_subnetworks = false
@@ -38,9 +37,7 @@ resource "google_compute_subnetwork" "prod-sub-west1" {
   network = "${google_compute_network.prod-network.self_link}"
 }
 
-
 // Server Instances
-
 variable "instance_names" {
   type = "map"
   default = {
@@ -49,7 +46,6 @@ variable "instance_names" {
     "2" = "muppet"
   }
 }
-
 
 resource "google_compute_instance" "default" {
   count = "3"

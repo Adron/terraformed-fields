@@ -43,21 +43,14 @@ resource "google_compute_instance" "default" {
   machine_type = "n1-standard-1"
   zone = "us-west1-a"
 
-  tags = [
-    "${lookup(var.instance_names, count.index)}"]
-
   boot_disk {
     initialize_params {
       image = "ubuntu-minimal-1804-bionic-v20180814"
     }
   }
 
-  scratch_disk {
-  }
-
   network_interface {
     subnetwork = "${google_compute_subnetwork.dev-sub-west1.id}"
-    access_config {}
   }
 
   service_account {

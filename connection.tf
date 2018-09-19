@@ -1,5 +1,5 @@
 provider "google" {
   credentials = "${file("../infosec/account.json")}"
-  project = "thrashing-code"
-  region = "us-west1"
+  project     = "thrashing-code"
+  region      = "us-west1"
 }

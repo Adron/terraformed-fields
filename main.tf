@@ -42,15 +42,18 @@ resource "google_compute_firewall" "bastion-ssh" {
   network = "${google_compute_network.dev-network.name}"
 
   allow {
-    protocol = "icmp"
-  }
-
-  allow {
     protocol = "tcp"
     ports    = ["22"]
   }
+}
 
-  source_tags = ["ssh"]
+resource "google_compute_firewall" "bastion-icmp" {
+  name    = "gimme-bastion-icmp"
+  network = "${google_compute_network.dev-network.name}"
+
+  allow {
+    protocol = "icmp"
+  }
 }
 
 // Static IP's

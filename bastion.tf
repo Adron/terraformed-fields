@@ -7,16 +7,16 @@ resource "google_compute_instance" "a" {
   machine_type = "n1-standard-1"
   zone         = "us-west1-a"
 
-  provisioner "file" {
-  source      = "install-c.sh"
-  destination = "install-c.sh"
+  // provisioner "file" {
+  // source      = "install-c.sh"
+  // destination = "install-c.sh"
 
-  connection {
-    type     = "ssh"
-    user     = "root"
-    password = "${var.root_password}"
-    }
-  }
+  // connection {
+  //   type     = "ssh"
+  //   user     = "root"
+  //   password = "${var.root_password}"
+  //   }
+  // }
 
   boot_disk {
     initialize_params {

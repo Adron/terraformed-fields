@@ -2,9 +2,9 @@ resource "google_compute_address" "bastion_a" {
   name = "bastion-a"
 }
 
-resource "google_compute_instance" "a" {
-  name         = "a"
-  machine_type = "n1-standard-1"
+resource "google_compute_instance" "bastion" {
+  name         = "bastion"
+  machine_type = "f1-micro"
   zone         = "us-west1-a"
 
   // provisioner "file" {

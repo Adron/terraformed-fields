@@ -1,22 +1,11 @@
-resource "google_compute_address" "bastion_a" {
+resource "google_compute_address" "bastion_addy" {
   name = "bastion-a"
 }
 
-resource "google_compute_instance" "a" {
-  name         = "a"
-  machine_type = "n1-standard-1"
+resource "google_compute_instance" "the_bastion" {
+  name         = "the-bastion"
+  machine_type = "f1-micro"
   zone         = "us-west1-a"
-
-  // provisioner "file" {
-  // source      = "install-c.sh"
-  // destination = "install-c.sh"
-
-  // connection {
-  //   type     = "ssh"
-  //   user     = "root"
-  //   password = "${var.root_password}"
-  //   }
-  // }
 
   boot_disk {
     initialize_params {
@@ -25,9 +14,9 @@ resource "google_compute_instance" "a" {
   }
 
   network_interface {
-    subnetwork = "${google_compute_subnetwork.dev-sub-west1.self_link}"
+    subnetwork = "${module.network_development.subnetwork_west}"
     access_config {
-      nat_ip = "${google_compute_address.bastion_a.address}"
+      nat_ip = "${google_compute_address.bastion_addy.address}"
     }
   }
 

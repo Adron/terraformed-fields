@@ -1,15 +1,33 @@
 resource "google_compute_address" "bastion_addy" {
-  name = "bastion-a"
+  name = "bastion"
 }
 
 resource "google_compute_instance" "the_bastion" {
   provisioner "file" {
     source      = "install-c.sh"
     destination = "install-c.sh"
+
     connection {
-      type = "ssh"
-      user = "ubuntu"
-      private_key = "${file("~/.ssh/id_rsa")}"
+      type        = "ssh"
+      user        = "adron"
+      private_key = "${file("~/.ssh/google_compute_engine")}"
+      agent       = false
+      timeout     = "30s"
+    }
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x ./install-c.sh",
+      "./install-c.sh",
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "adron"
+      private_key = "${file("~/.ssh/google_compute_engine")}"
+      agent       = false
+      timeout     = "30s"
     }
   }
 

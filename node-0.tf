@@ -22,7 +22,7 @@ resource "google_compute_instance" "node_zero" {
 
   network_interface {
     subnetwork = "${module.network_development.subnetwork_west}"
-    network_ip = "${google_compute_address.node_zero_address.address}"
+    address = "${google_compute_address.node_zero_address.address}"
 
     access_config {
       nat_ip = "${google_compute_address.node_zero_public_address.address}"

@@ -6,7 +6,11 @@ resource "google_compute_instance" "the_bastion" {
   provisioner "file" {
     source      = "install-c.sh"
     destination = "install-c.sh"
-    
+    connection {
+      type = "ssh"
+      user = "ubuntu"
+      private_key = "${file("~/.ssh/id_rsa")}"
+    }
   }
 
   name         = "the-bastion"

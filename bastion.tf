@@ -3,6 +3,12 @@ resource "google_compute_address" "bastion_addy" {
 }
 
 resource "google_compute_instance" "the_bastion" {
+  provisioner "file" {
+    source      = "install-c.sh"
+    destination = "install-c.sh"
+    
+  }
+
   name         = "the-bastion"
   machine_type = "f1-micro"
   zone         = "us-west1-a"
@@ -15,6 +21,7 @@ resource "google_compute_instance" "the_bastion" {
 
   network_interface {
     subnetwork = "${module.network_development.subnetwork_west}"
+
     access_config {
       nat_ip = "${google_compute_address.bastion_addy.address}"
     }

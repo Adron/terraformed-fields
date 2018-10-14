@@ -3,6 +3,8 @@ resource "google_compute_address" "bastion_addy" {
 }
 
 resource "google_compute_instance" "the_bastion" {
+  count = "${var.build_bastion}"
+
   provisioner "file" {
     source      = "install-c.sh"
     destination = "install-c.sh"

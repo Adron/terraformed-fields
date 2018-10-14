@@ -1,4 +1,8 @@
 resource "google_storage_bucket" "all-the-things" {
-  name     = "all-the-things-storage"
-  location = "US"
+  name       = "all-the-things-storage"
+  location   = "US"
+  storage_class = "MULTI_REGIONAL"
+  versioning = {
+    enabled = "true"
+  }
 }
